@@ -3,7 +3,6 @@ let squareCount = parseInt(Math.random() * 21) + 30;
 // Make some variable for a really big zIndex 
 
 for (let i = 0; i < squareCount; i++) {
-
 }
 function getRandomColor() {
     let letters = "0123456789ABCDEF";
@@ -26,6 +25,9 @@ function addSquare(){
 
 function changeColors() {
     let allSquares = document.querySelectorAll(".square");
-   
+   for (let i = 0; i < allSquares.length; i++) {
+        allSquares[i].style.backgroundColor = getRandomColor();
+    }
 }
 document.querySelectorAll("button")[0].onclick = addSquare;
+document.querySelectorAll("button")[1].onclick = changeColors;
