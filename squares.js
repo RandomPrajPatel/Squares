@@ -3,6 +3,7 @@ let squareCount = parseInt(Math.random() * 21) + 30;
 // Make some variable for a really big zIndex 
 
 for (let i = 0; i < squareCount; i++) {
+      addSquare();
 }
 function getRandomColor() {
     let letters = "0123456789ABCDEF";
