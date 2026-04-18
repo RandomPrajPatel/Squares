@@ -1,6 +1,6 @@
 let squareArea = document.querySelector("#squarearea");
 let squareCount = parseInt(Math.random() * 21) + 30;
-// Make some variable for a really big zIndex 
+let topZ = 1;
 
 for (let i = 0; i < squareCount; i++) {
       addSquare();
@@ -21,6 +21,14 @@ function addSquare(){
     square.style.top = parseInt(Math.random() * 250) + "px";
     square.style.backgroundColor = getRandomColor();
     
+square.onclick = function () {
+    if (square.style.zIndex == topZ) {
+        square.remove();
+    } else {
+        topZ++;
+        square.style.zIndex = topZ;
+    }
+};
     squareArea.append(square);
 }
 
